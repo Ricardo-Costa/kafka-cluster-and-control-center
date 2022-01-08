@@ -3,10 +3,37 @@ Basic structure and examples to start with kafka to your projects.
 
 ## Others
 
-Create Topic by command line<br>
-- Access container:<br/>
-  > `docker exec -ti kafka-1 bash`
-- Run command to create:
-  > `kafka-topics --create --bootstrap-server kafka-2:29092 --replication-factor 3 --partitions 3 --topic mytopic`
-- Run command to list:
-  > `kafka-topics --list --bootstrap-server kafka-2:29092`
+**Create Topic by `command line`**
+
+Access container:
+```bash
+docker exec -ti kafka-1 bash
+```
+
+Run command to create:
+```bash
+kafka-topics --create --bootstrap-server kafka-2:29092 --replication-factor 3 --partitions 3 --topic mytopic
+```
+
+Run command to list:
+```bash
+kafka-topics --list --bootstrap-server kafka-2:29092
+```
+<br>
+
+**Test `Producer` by `command line`**
+
+Connect to topic:
+```bash
+kafka-console-producer --broker-list kafka-2:29092 --topic mytopic
+```
+![Producer Sending](./images/producer.png)
+<br>
+
+**Test `Consumer` by `command line`**
+
+Connect to topic:
+```bash
+kafka-console-consumer --bootstrap-server kafka-2:29092 --topic mytopic
+```
+![Consumer Receiving](./images/consumer.png)
