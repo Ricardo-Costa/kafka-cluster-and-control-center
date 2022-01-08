@@ -25,6 +25,12 @@ Run command to list:
 ```bash
 kafka-topics --list --bootstrap-server kafka-2:29092
 ```
+
+Run command to show topic details:
+```bash
+kafka-topics --describe --bootstrap-server kafka-2:29092 --topic mytopic
+```
+![Topic details](./images/topics.png)
 <br>
 
 **Test `Producer` by `command line`**
@@ -43,3 +49,15 @@ Connect to topic:
 kafka-console-consumer --bootstrap-server kafka-2:29092 --topic mytopic
 ```
 ![Consumer Receiving](./images/consumer.png)
+<br>
+
+Connect to topic with Consumer Group:
+```bash
+kafka-console-consumer --bootstrap-server kafka-2:29092 --topic mytopic --from-beginning --group a
+```
+
+Show Consumer Group details:
+```bash
+kafka-consumer-groups --group a --bootstrap-server kafka-2:29092 --describe
+```
+![Consumer Group details](./images/consumer-group.png)
