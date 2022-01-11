@@ -3,7 +3,7 @@ Basic structure and examples to start with kafka to your projects.
 
 ## All Services
 
-**Zookeeper, Kafka and Control Center**
+**Zookeeper(cluster), Kafka(cluster), Control Center and Kafka Topics Generator**
 
 ![All Services](./images/services.png)
 
@@ -31,6 +31,7 @@ Run command to show topic details:
 kafka-topics --describe --bootstrap-server kafka-2:29092 --topic mytopic
 ```
 ![Topic details](./images/topics.png)
+
 <br>
 
 **Test `Producer` by `command line`**
@@ -40,6 +41,7 @@ Connect to topic:
 kafka-console-producer --broker-list kafka-2:29092 --topic mytopic
 ```
 ![Producer Sending](./images/producer.png)
+
 <br>
 
 **Test `Consumer` by `command line`**
@@ -49,7 +51,6 @@ Connect to topic:
 kafka-console-consumer --bootstrap-server kafka-2:29092 --topic mytopic
 ```
 ![Consumer Receiving](./images/consumer.png)
-<br>
 
 Connect to topic with Consumer Group:
 ```bash
@@ -61,3 +62,9 @@ Show Consumer Group details:
 kafka-consumer-groups --group a --bootstrap-server kafka-2:29092 --describe
 ```
 ![Consumer Group details](./images/consumer-group.png)
+
+<br>
+
+**Kafka Topics Generator**
+
+Will create topics on startup by using kafka console. `kafka-topics`.
