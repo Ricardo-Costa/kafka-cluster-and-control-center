@@ -68,3 +68,7 @@ kafka-consumer-groups --group a --bootstrap-server kafka-2:29092 --describe
 **Kafka Topics Generator**
 
 Will create topics on startup by using kafka console. `kafka-topics`.
+
+**References:**
+
+https://kafka.js.org/docs/getting-started
